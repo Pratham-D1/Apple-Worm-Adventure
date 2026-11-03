@@ -1,0 +1,304 @@
+/* ==========================================
+   Apple Worm Adventure - Retro Arcade Layout Styles
+   ========================================== */
+
+/* Navbar (Arcade Marquee Header) */
+.game-navbar {
+  background: rgba(8, 14, 31, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1rem;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.navbar-logo-icon {
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.5));
+}
+
+.navbar-brand:hover .navbar-logo-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0px;
+  color: var(--neon-coral);
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.6);
+  line-height: 1.2;
+}
+
+.navbar-subtitle {
+  font-family: var(--font-arcade);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--neon-green);
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+/* Nav Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link {
+  font-family: var(--font-arcade);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-arcade-muted);
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--neon-green);
+  border-color: rgba(0, 255, 102, 0.3);
+}
+
+.nav-link.active {
+  background: rgba(0, 255, 102, 0.12);
+  color: var(--neon-green);
+  border: 1px solid var(--neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+/* Right Status Area */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.wallet-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 183, 3, 0.12);
+  border: 2px solid var(--neon-amber);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-arcade);
+  font-weight: 800;
+  color: var(--neon-amber);
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 183, 3, 0.25);
+}
+
+.wallet-pill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 183, 3, 0.5);
+}
+
+.user-profile-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--arcade-bezel-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-arcade-bright);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.user-avatar-btn:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+.avatar-emoji {
+  font-size: 1.15rem;
+}
+
+.logout-btn {
+  font-family: var(--font-arcade);
+  font-size: 0.8rem;
+  color: var(--text-arcade-muted);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.logout-btn:hover {
+  color: var(--neon-coral);
+  background: rgba(255, 51, 102, 0.15);
+  border-color: rgba(255, 51, 102, 0.4);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mobile-toggle-btn {
+  display: none;
+  font-size: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--neon-green);
+  background: rgba(0, 255, 102, 0.1);
+  border: 1px solid var(--neon-green-border);
+}
+
+/* Mobile Drawer */
+.mobile-nav-drawer {
+  display: none;
+  background: #090e1f;
+  border-bottom: 2px solid var(--neon-green-border);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+  padding: 1.25rem 0;
+  animation: slideDown 0.25s ease-out;
+}
+
+.mobile-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-link {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-arcade);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  color: var(--text-arcade-bright);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  background: rgba(0, 255, 102, 0.15);
+  color: var(--neon-green);
+  border-color: var(--neon-green);
+}
+
+.mobile-auth-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer (Arcade Bottom Panel - Slim Compact Bar) */
+.game-footer {
+  background: #050813;
+  border-top: 2px solid var(--arcade-bezel-border);
+  padding: 0.45rem 0;
+  margin-top: auto;
+  position: relative;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-height: 28px;
+}
+
+.footer-brand {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: var(--neon-green);
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.4);
+}
+
+.footer-leds {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-led-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-arcade);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-arcade-muted);
+  text-transform: uppercase;
+}
+
+.led-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.led-green { background: #00ff66; color: #00ff66; }
+.led-amber { background: #ffb703; color: #ffb703; }
+.led-red { background: #ff3366; color: #ff3366; }
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 868px) {
+  .navbar-links {
+    display: none;
+  }
+  .mobile-toggle-btn {
+    display: flex;
+  }
+  .mobile-nav-drawer {
+    display: block;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

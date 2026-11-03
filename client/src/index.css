@@ -1,0 +1,263 @@
+/* ==========================================
+   Apple Worm Adventure - Retro Arcade Theme & Tokens
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@500;600;700;800&family=VT323&display=swap');
+
+:root {
+  /* Retro Arcade Core Palette */
+  --arcade-bg: #070b18;
+  --arcade-bg-gradient: radial-gradient(circle at 50% 15%, #111a36 0%, #070b18 85%);
+  --arcade-screen-bg: #090e1f;
+  --arcade-bezel: #12192e;
+  --arcade-bezel-border: #1e2a4a;
+  --arcade-metallic: linear-gradient(180deg, #2b3a62 0%, #161e38 50%, #0c1224 100%);
+  --arcade-card: rgba(13, 20, 38, 0.88);
+  --arcade-card-border: #1e2c4d;
+
+  /* Neon Accents */
+  --neon-green: #00ff66;
+  --neon-green-hover: #10b981;
+  --neon-green-light: rgba(0, 255, 102, 0.12);
+  --neon-green-glow: 0 0 10px rgba(0, 255, 102, 0.55), 0 0 20px rgba(0, 255, 102, 0.25);
+  --neon-green-border: rgba(0, 255, 102, 0.5);
+
+  --neon-amber: #ffb703;
+  --neon-amber-glow: 0 0 10px rgba(255, 183, 3, 0.55), 0 0 20px rgba(255, 183, 3, 0.25);
+
+  --neon-coral: #ff3366;
+  --neon-coral-hover: #e11d48;
+  --neon-coral-light: rgba(255, 51, 102, 0.15);
+  --neon-coral-glow: 0 0 10px rgba(255, 51, 102, 0.55), 0 0 20px rgba(255, 51, 102, 0.25);
+
+  --neon-cyan: #00f0ff;
+  --neon-cyan-glow: 0 0 10px rgba(0, 240, 255, 0.55), 0 0 20px rgba(0, 240, 255, 0.25);
+
+  --neon-magenta: #d946ef;
+  --neon-magenta-glow: 0 0 10px rgba(217, 70, 239, 0.55);
+
+  /* Typography Colors */
+  --text-arcade-green: #a7f3d0;
+  --text-arcade-bright: #f8fafc;
+  --text-arcade-muted: #8493b2;
+  --text-arcade-dim: #4b5875;
+
+  /* Backward Compatibility Mapping */
+  --apple-red: var(--neon-coral);
+  --apple-red-hover: var(--neon-coral-hover);
+  --apple-red-light: var(--neon-coral-light);
+  --apple-red-glow: var(--neon-coral-glow);
+
+  --worm-green: var(--neon-green);
+  --worm-green-dark: #059669;
+  --worm-green-light: var(--neon-green-light);
+  --worm-green-glow: var(--neon-green-glow);
+
+  --cream-bg: var(--arcade-bg);
+  --cream-subtle: #0d1527;
+  --cream-card: var(--arcade-card);
+  --cream-border: var(--arcade-card-border);
+
+  --forest-dark: #f8fafc;
+  --forest-moss: #0d1a2d;
+  --forest-card: #0f1c32;
+
+  --gold-star: var(--neon-amber);
+  --gold-star-glow: var(--neon-amber-glow);
+
+  --text-main: var(--text-arcade-bright);
+  --text-muted: var(--text-arcade-muted);
+  --text-light: #f8fafc;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 18px 45px rgba(0, 0, 0, 0.85);
+  --arcade-cabinet-glow: 0 0 35px rgba(0, 255, 102, 0.12), 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-arcade: 'Chakra Petch', sans-serif;
+  --font-digital: 'VT323', monospace;
+  --font-mono: 'Courier New', Courier, monospace;
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--arcade-bg);
+  background-image:
+    radial-gradient(rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(0, 255, 102, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px, 64px 64px;
+  background-position: 0 0, 16px 16px;
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle CRT Scanline Filter across the entire page */
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  z-index: 99999;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-arcade);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+
+.pixel-text {
+  font-family: var(--font-pixel) !important;
+  letter-spacing: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.4), inset 0 0 8px rgba(0, 255, 102, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.7), inset 0 0 12px rgba(0, 255, 102, 0.35);
+  }
+}
+
+@keyframes ledBlink {
+  0%, 100% { opacity: 1; filter: brightness(1.2); }
+  50% { opacity: 0.3; filter: brightness(0.6); }
+}
+
+@keyframes bounceSmall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-bounce {
+  animation: bounceSmall 2s infinite ease-in-out;
+}
+
+.animate-pulse {
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.animate-led {
+  animation: ledBlink 1.5s infinite steps(2, start);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .main-content {
+    padding: 1rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

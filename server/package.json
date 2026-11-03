@@ -1,0 +1,34 @@
+{
+  "name": "apple-worm-adventure-server",
+  "version": "1.0.0",
+  "description": "Backend API server for Apple Worm Adventure",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "seed:levels": "node src/config/seedLevels.js",
+    "seed:achievements": "node src/config/seedAchievements.js",
+    "seed:demo": "node src/scripts/seedData.js",
+    "seed:all": "node src/scripts/seedData.js",
+    "create:admin": "node src/scripts/createAdmin.js"
+  },
+  "keywords": [
+    "apple-worm",
+    "express",
+    "nodejs",
+    "game-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

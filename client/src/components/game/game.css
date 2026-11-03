@@ -1,0 +1,1051 @@
+/* ==========================================
+   Apple Worm Adventure - Retro Arcade Game Styling
+   ========================================== */
+
+/* ------------------------------------------
+   1. Arcade Cabinet Wrapper & Exterior Housing
+   ------------------------------------------ */
+.arcade-cabinet-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.arcade-cabinet {
+  width: 100%;
+  background: linear-gradient(180deg, #1f2b4d 0%, #121a33 30%, #0a0f21 100%);
+  border: 4px solid #2d3d69;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 0 35px rgba(0, 255, 102, 0.15), 0 25px 65px rgba(0, 0, 0, 0.95);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabinet Top Marquee */
+.arcade-marquee {
+  background: linear-gradient(180deg, #172242 0%, #0d1429 100%);
+  border-bottom: 3px solid #2a3a66;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.cabinet-bolt {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 35% 35%, #94a3b8, #334155);
+  border-radius: 50%;
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.cabinet-marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.marquee-logo {
+  font-size: 1.6rem;
+}
+
+.marquee-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.marquee-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  color: #00ff66;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.7), 0 0 20px rgba(0, 255, 102, 0.4);
+  letter-spacing: 1px;
+}
+
+.marquee-sub {
+  font-family: var(--font-arcade);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffb703;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cabinet-status-leds {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.led-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-arcade);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-arcade-muted);
+}
+
+.led-bulb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.led-bulb.led-green {
+  background: #00ff66;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+.led-bulb.led-cyan {
+  background: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+}
+
+.led-bulb.led-amber {
+  background: #ffb703;
+  box-shadow: 0 0 8px #ffb703;
+}
+
+/* ------------------------------------------
+   2. Arcade Bezel & CRT Screen Housing
+   ------------------------------------------ */
+.arcade-bezel {
+  padding: 1.25rem 1.25rem 0.75rem;
+  background: #090e1f;
+}
+
+.arcade-screen-housing {
+  background: #060a17;
+  border: 3px solid #1c2747;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.95), 0 0 15px rgba(0, 255, 102, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top HUD inside CRT Screen */
+.crt-hud-top {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  background: rgba(10, 16, 36, 0.95);
+  border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+  gap: 0.5rem;
+}
+
+.hud-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-left {
+  align-items: flex-start;
+}
+
+.hud-center {
+  align-items: center;
+  text-align: center;
+}
+
+.hud-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hud-label-pixel {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--text-arcade-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
+}
+
+.hud-value-digital {
+  font-family: var(--font-digital);
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.text-neon-green {
+  color: #00ff66;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+.text-neon-amber {
+  color: #ffb703;
+  text-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+}
+
+.text-neon-coral {
+  color: #ff3366;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.6);
+}
+
+.hud-sub-val {
+  font-family: var(--font-arcade);
+  font-size: 0.75rem;
+  color: var(--text-arcade-dim);
+  font-weight: 700;
+}
+
+.hud-level-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.hud-level-num {
+  font-size: 0.85rem;
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+.hud-level-title {
+  font-family: var(--font-arcade);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.hud-diff-tag {
+  background: rgba(0, 255, 102, 0.15);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+  color: #00ff66;
+  font-family: var(--font-arcade);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.hud-max-moves {
+  font-size: 1.1rem;
+  color: var(--text-arcade-muted);
+}
+
+.hud-apples-pill {
+  font-family: var(--font-arcade);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fca5a5;
+}
+
+/* CRT Viewport */
+.crt-viewport {
+  position: relative;
+  background: #080d1e;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* CRT Scanlines Layer */
+.crt-scanlines-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.35) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 20;
+  opacity: 0.75;
+}
+
+/* CRT Alert / Hint Banner */
+.crt-alert-banner {
+  position: absolute;
+  top: 1rem;
+  z-index: 30;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-arcade);
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.crt-hint {
+  background: rgba(245, 158, 11, 0.2);
+  border: 2px solid #f59e0b;
+  color: #fde68a;
+  text-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+}
+
+.crt-success {
+  background: rgba(0, 255, 102, 0.2);
+  border: 2px solid #00ff66;
+  color: #a7f3d0;
+}
+
+.crt-warning {
+  background: rgba(255, 51, 102, 0.2);
+  border: 2px solid #ff3366;
+  color: #fca5a5;
+}
+
+/* Retro Start Game Overlay */
+.crt-start-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 24, 0.92);
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+.start-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  max-width: 420px;
+}
+
+.start-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 102, 0.6));
+}
+
+.start-title {
+  font-size: 1.3rem;
+  color: #00ff66;
+  text-shadow: 0 0 15px rgba(0, 255, 102, 0.8), 0 0 30px rgba(0, 255, 102, 0.4);
+}
+
+.start-level-label {
+  font-family: var(--font-arcade);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.start-game-btn {
+  font-family: var(--font-pixel) !important;
+  font-size: 0.9rem !important;
+  padding: 1rem 2rem !important;
+  background: linear-gradient(180deg, #33ff85, #00ff66 50%, #00cc52 100%) !important;
+  color: #042911 !important;
+  border: 3px solid #66ffa3 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.6), 0 5px 0 #00993d !important;
+}
+
+.start-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: var(--font-arcade);
+  font-size: 0.8rem;
+  color: var(--text-arcade-muted);
+  font-weight: 700;
+}
+
+/* Bottom CRT Status Ticker */
+.crt-hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: rgba(8, 14, 32, 0.95);
+  border-top: 1px solid rgba(0, 240, 255, 0.15);
+  font-family: var(--font-arcade);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-arcade-muted);
+}
+
+.ticker-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ticker-status-tag {
+  color: #00ff66;
+}
+
+.ticker-coin-val {
+  color: #ffb703;
+}
+
+/* ------------------------------------------
+   3. Retro Arcade Game Board & Entities
+   ------------------------------------------ */
+.board-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.game-board {
+  display: grid;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  background: #090f24;
+  border: 3px solid #00f0ff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), inset 0 0 15px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+.board--paused {
+  filter: blur(2px) grayscale(40%);
+}
+
+.pause-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 25, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 40;
+  gap: 0.5rem;
+  backdrop-filter: blur(3px);
+}
+
+.pause-icon {
+  font-size: 3rem;
+}
+
+.pause-overlay h3 {
+  font-family: var(--font-pixel);
+  color: #00ff66;
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+}
+
+.pause-overlay p {
+  font-family: var(--font-arcade);
+  color: var(--text-arcade-muted);
+}
+
+/* Grid Cells */
+.grid-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 240, 255, 0.08);
+}
+
+.cell-even {
+  background-color: rgba(14, 23, 50, 0.95);
+}
+
+.cell-odd {
+  background-color: rgba(10, 17, 38, 0.95);
+}
+
+/* Entities */
+.cell-entity {
+  width: 88%;
+  height: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: all 0.1s ease-out;
+}
+
+/* Retro Pixel Worm Head */
+.entity-worm-head {
+  background: linear-gradient(135deg, #00ff66, #059669);
+  border-radius: 40%;
+  border: 2px solid #003816;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(0, 255, 102, 0.8);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Directional rotations for head */
+.entity-worm--right { transform: rotate(0deg); }
+.entity-worm--down { transform: rotate(90deg); }
+.entity-worm--left { transform: rotate(180deg); }
+.entity-worm--up { transform: rotate(270deg); }
+
+.worm-eye {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.worm-eye::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #000;
+  border-radius: 50%;
+  top: 1px;
+  right: 1px;
+}
+
+.eye-left {
+  top: 4px;
+  right: 6px;
+}
+
+.eye-right {
+  bottom: 4px;
+  right: 6px;
+}
+
+/* Retro Worm Body */
+.entity-worm-body {
+  background: linear-gradient(135deg, #00ff88, #10b981);
+  border-radius: 35%;
+  border: 2px solid #022c15;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 0 6px rgba(0, 255, 102, 0.4);
+}
+
+/* Retro Worm Tail */
+.entity-worm-tail {
+  background: linear-gradient(135deg, #34d399, #059669);
+  border-radius: 50% 20% 50% 20%;
+  border: 2px solid #022c15;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  transform: scale(0.85);
+}
+
+/* Retro Apple */
+.entity-apple {
+  filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.9));
+  font-size: 1.7rem;
+}
+
+/* Retro Obstacle Block */
+.entity-obstacle {
+  background: linear-gradient(135deg, #334155, #1e293b);
+  border: 2px solid #64748b;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.2), 0 2px 6px rgba(0, 0, 0, 0.7);
+  font-size: 1.3rem;
+}
+
+/* Retro Exit Portal */
+.entity-portal {
+  font-size: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal--unlocked {
+  filter: drop-shadow(0 0 16px rgba(0, 240, 255, 0.95)) drop-shadow(0 0 8px rgba(255, 183, 3, 0.8));
+}
+
+.portal--locked {
+  filter: grayscale(80%) opacity(0.5);
+}
+
+.portal-lock-badge {
+  position: absolute;
+  font-size: 0.85rem;
+  bottom: -2px;
+  right: -2px;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.9));
+}
+
+/* Failure Overlay */
+.board--failed {
+  filter: contrast(90%);
+}
+
+.failure-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 16, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 40;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.failure-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(255, 51, 102, 0.8));
+}
+
+.failure-overlay h3 {
+  font-family: var(--font-pixel);
+  color: #ff3366;
+  font-size: 1.4rem;
+  text-shadow: 0 0 12px rgba(255, 51, 102, 0.7);
+}
+
+.failure-overlay p {
+  font-family: var(--font-arcade);
+  color: #cbd5e1;
+}
+
+.failure-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* ------------------------------------------
+   4. Arcade Control Deck & Push Buttons
+   ------------------------------------------ */
+.arcade-control-deck {
+  background: linear-gradient(180deg, #141c36 0%, #0c1224 100%);
+  border-top: 3px solid #283763;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deck-buttons-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* Arcade Push Buttons */
+.arcade-push-btn {
+  font-family: var(--font-arcade);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s ease-out;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  text-transform: uppercase;
+}
+
+.arcade-push-btn:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.arcade-push-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-cyan {
+  background: linear-gradient(180deg, #33f3ff, #00c4d4);
+  color: #032b30;
+  border: 2px solid #80f7ff;
+}
+.btn-cyan:hover:not(:disabled) {
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+.btn-amber {
+  background: linear-gradient(180deg, #fcd34d, #f59e0b);
+  color: #3b1d03;
+  border: 2px solid #fde68a;
+}
+.btn-amber:hover:not(:disabled) {
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 183, 3, 0.5);
+}
+
+.btn-green {
+  background: linear-gradient(180deg, #33ff85, #00ff66);
+  color: #032910;
+  border: 2px solid #80ffb3;
+}
+.btn-green:hover:not(:disabled) {
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 255, 102, 0.5);
+}
+
+.btn-coral {
+  background: linear-gradient(180deg, #ff668a, #ff3366);
+  color: #ffffff;
+  border: 2px solid #ffa3ba;
+}
+.btn-coral:hover:not(:disabled) {
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 51, 102, 0.5);
+}
+
+.btn-dark {
+  background: linear-gradient(180deg, #2a3759, #172138);
+  color: var(--text-arcade-bright);
+  border: 2px solid #3d4f7c;
+}
+
+/* Touch D-Pad for Mobile */
+.deck-dpad-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobile-dpad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  grid-template-rows: repeat(3, 56px);
+  gap: 4px;
+  background: #0a0f21;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  border: 3px solid #24335c;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 102, 0.15);
+}
+
+.dpad-btn {
+  background: linear-gradient(180deg, #27355c, #16203d);
+  color: #00ff66;
+  border: 2px solid #3e5287;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0 #0d1429, 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: all 0.08s ease;
+  user-select: none;
+}
+
+.dpad-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0d1429;
+  background: #00ff66;
+  color: #042911;
+  border-color: #66ffa3;
+}
+
+.dpad-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.dpad-center-hub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0c1329;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  border: 2px solid #1f2c52;
+}
+
+.dpad-hint {
+  font-family: var(--font-arcade);
+  font-size: 0.72rem;
+  color: var(--text-arcade-dim);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ------------------------------------------
+   5. Cabinet Base & Footer
+   ------------------------------------------ */
+.arcade-cabinet-footer {
+  background: #0a0f21;
+  border-top: 2px solid #1a2545;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cabinet-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cabinet-serial {
+  font-family: var(--font-arcade);
+  font-size: 0.7rem;
+  color: var(--text-arcade-dim);
+  letter-spacing: 1px;
+}
+
+/* ------------------------------------------
+   6. Victory Level Complete Modal
+   ------------------------------------------ */
+.victory-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.15rem;
+}
+
+.victory-crown {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 15px rgba(255, 183, 3, 0.8));
+}
+
+.victory-title {
+  font-family: var(--font-pixel);
+  font-size: 1.4rem;
+  color: #00ff66;
+  text-shadow: 0 0 12px rgba(0, 255, 102, 0.7);
+  letter-spacing: 1px;
+}
+
+.victory-subtitle {
+  font-family: var(--font-arcade);
+  color: var(--text-arcade-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.victory-stars-row {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 2.8rem;
+  margin: 0.25rem 0;
+}
+
+.star-earned {
+  filter: drop-shadow(0 0 12px rgba(255, 183, 3, 0.8));
+  animation: starEarn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.star-empty {
+  opacity: 0.2;
+  filter: grayscale(100%);
+}
+
+.victory-stats-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  background: rgba(8, 14, 30, 0.9);
+  border: 2px solid var(--arcade-bezel-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+}
+
+.victory-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.victory-stat-item .stat-label {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--text-arcade-muted);
+  text-transform: uppercase;
+}
+
+.victory-stat-item .stat-value {
+  font-family: var(--font-digital);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #00ff66;
+}
+
+.victory-stat-item.highlight-coin .stat-value {
+  color: #ffb703;
+}
+
+.doubled-tag {
+  display: inline-block;
+  margin-left: 0.25rem;
+  background: #ffb703;
+  color: #451a03;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.victory-double-section {
+  width: 100%;
+  margin: 0.25rem 0;
+}
+
+.doubled-success-banner {
+  background: rgba(0, 255, 102, 0.15);
+  border: 2px solid #00ff66;
+  color: #a7f3d0;
+  font-family: var(--font-arcade);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.25);
+}
+
+.double-reward-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.double-reward-btn {
+  background: linear-gradient(180deg, #fcd34d, #f59e0b 50%, #d97706 100%) !important;
+  color: #451a03 !important;
+  border: 2px solid #fde68a !important;
+  font-family: var(--font-arcade) !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  box-shadow: 0 0 20px rgba(255, 183, 3, 0.4), 0 4px 0 #b45309 !important;
+}
+
+.demo-ad-subtext {
+  font-size: 0.72rem;
+  color: var(--text-arcade-dim);
+  text-align: center;
+  font-weight: 600;
+}
+
+.double-error-text {
+  font-size: 0.8rem;
+  color: var(--neon-coral);
+  font-weight: 700;
+}
+
+/* Newly Unlocked Achievement Notification */
+.victory-achievement-banner {
+  background: linear-gradient(135deg, rgba(255, 183, 3, 0.15), rgba(245, 158, 11, 0.25));
+  border: 2px solid #ffb703;
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+}
+
+.ach-notify-icon {
+  font-size: 1.8rem;
+}
+
+.ach-notify-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+
+.ach-notify-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
+  color: #ffb703;
+}
+
+.ach-notify-names {
+  font-family: var(--font-arcade);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.victory-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.victory-secondary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@keyframes starEarn {
+  0% { transform: scale(0.2) rotate(-30deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .crt-hud-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hud-center {
+    grid-column: 1 / -1;
+    order: -1;
+    margin-bottom: 0.25rem;
+  }
+  .game-board {
+    max-width: 310px;
+  }
+  .cell-entity {
+    font-size: 1.25rem;
+  }
+  .dpad-grid {
+    grid-template-columns: repeat(3, 48px);
+    grid-template-rows: repeat(3, 48px);
+  }
+}

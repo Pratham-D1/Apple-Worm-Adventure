@@ -1,0 +1,296 @@
+/* ==========================================
+   Apple Worm Adventure - Retro Arcade UI Components
+   ========================================== */
+
+/* Button Component */
+.game-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-arcade);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-align: center;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.game-btn:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.game-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(60%);
+  box-shadow: none;
+}
+
+/* Button Variants */
+.game-btn--primary {
+  background: linear-gradient(180deg, #ff4d79, #ff3366 50%, #d91b4c 100%);
+  color: #ffffff;
+  border: 2px solid #ff668f;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.game-btn--primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ff668f, #ff4d79 50%, #eb2f5d 100%);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4), var(--neon-coral-glow);
+}
+
+.game-btn--secondary {
+  background: linear-gradient(180deg, #33ff85, #00ff66 50%, #00cc52 100%);
+  color: #042911;
+  border: 2px solid #66ffa3;
+  font-weight: 800;
+}
+.game-btn--secondary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #66ffa3, #1aff75 50%, #00e65c 100%);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4), var(--neon-green-glow);
+}
+
+.game-btn--outline {
+  background: rgba(18, 25, 46, 0.85);
+  color: var(--text-arcade-bright);
+  border: 2px solid var(--arcade-bezel-border);
+}
+.game-btn--outline:hover:not(:disabled) {
+  background: rgba(30, 44, 77, 0.9);
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+.game-btn--ghost {
+  background: transparent;
+  color: var(--text-arcade-muted);
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+.game-btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.game-btn--gold {
+  background: linear-gradient(180deg, #fcd34d, #f59e0b 50%, #d97706 100%);
+  color: #451a03;
+  border: 2px solid #fde68a;
+  font-weight: 800;
+}
+.game-btn--gold:hover:not(:disabled) {
+  background: linear-gradient(180deg, #fde68a, #fbbf24 50%, #d97706 100%);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4), var(--neon-amber-glow);
+}
+
+.game-btn--danger {
+  background: linear-gradient(180deg, #f87171, #ef4444 50%, #b91c1c 100%);
+  color: #ffffff;
+  border: 2px solid #fca5a5;
+}
+
+/* Button Sizes */
+.game-btn--sm {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.game-btn--md {
+  padding: 0.6rem 1.35rem;
+  font-size: 0.95rem;
+}
+
+.game-btn--lg {
+  padding: 0.85rem 1.85rem;
+  font-size: 1.15rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.game-btn--full {
+  width: 100%;
+}
+
+.game-btn__icon {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Card Component (Retro Arcade Panel) */
+.game-card {
+  background: var(--arcade-card);
+  border: 2px solid var(--arcade-card-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+.game-card--hoverable:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), 0 0 15px rgba(0, 255, 102, 0.15);
+  border-color: rgba(0, 255, 102, 0.5);
+}
+
+.game-card--forest {
+  background: rgba(13, 26, 45, 0.9);
+  color: var(--text-arcade-bright);
+  border-color: #1e3a5f;
+}
+
+.game-card--apple {
+  background: rgba(36, 15, 28, 0.9);
+  border-color: rgba(255, 51, 102, 0.4);
+}
+
+.game-card--cream {
+  background: var(--cream-subtle);
+  border-color: var(--cream-border);
+}
+
+/* Badge Component */
+.game-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-arcade);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.game-badge--default {
+  background: rgba(30, 41, 59, 0.8);
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+.game-badge--success {
+  background: rgba(0, 255, 102, 0.15);
+  color: var(--neon-green);
+  border: 1px solid rgba(0, 255, 102, 0.45);
+}
+
+.game-badge--danger {
+  background: rgba(255, 51, 102, 0.15);
+  color: var(--neon-coral);
+  border: 1px solid rgba(255, 51, 102, 0.45);
+}
+
+.game-badge--gold {
+  background: rgba(255, 183, 3, 0.15);
+  color: var(--neon-amber);
+  border: 1px solid rgba(255, 183, 3, 0.45);
+}
+
+.game-badge--easy {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.game-badge--medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.game-badge--hard {
+  background: rgba(249, 115, 22, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+.game-badge--expert {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* Modal Component (Arcade Cabinet Popup) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(5, 8, 18, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-container {
+  background: #0d152a;
+  border: 3px solid var(--neon-green-border);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 0 35px rgba(0, 255, 102, 0.2), 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  animation: modalPop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-title {
+  font-family: var(--font-arcade);
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text-arcade-muted);
+  transition: all var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--neon-coral);
+  color: #ffffff;
+  border-color: var(--neon-coral);
+}
+
+.modal-body {
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
